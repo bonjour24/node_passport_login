@@ -1,0 +1,44 @@
+
+
+<body style="background-color: #f8f8f8">
+	{{> basicHeader}}
+	<div class="login">
+		<section class="login_container p-3">
+			<br><br><br>
+			<div class="rounded">
+				<div class="row">
+					<div class="col-sm-8 khel cus_shadow card">
+						<div class="row">
+							<div class="col-sm-7">
+								<div class="form-wrap p-4">
+									<h5 class="reg">Login</h5>
+									<p class="wel">Welcome Back</p>
+									<form action="/users/login" method="POST">
+										<table class="w-100" cellpadding="20">
+											<tbody>
+												<tr>
+													<td><input type="email" name="email" placeholder="Email" id="email"></td>
+												</tr>
+												<tr>
+													<td><input type="password" name="password" placeholder="Enter Password" id="password"></td>
+												</tr>
+											</tbody>
+										</table>
+										<div style="padding:20px;">
+											<button  class="btn btn-con w-100 p-2" type="submit"  value="Continue">Continue</button>	
+										</div>
+										
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 p-5">
+						<img src="/img/forLogin.png">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	</body>
+

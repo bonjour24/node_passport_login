@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const expbs=require('express-handlebars');
+const path=require('path');
 
 const app = express();
 
@@ -23,8 +25,16 @@ mongoose
   .catch(err => console.log(err));
 
 // EJS
-app.use(expressLayouts);
-app.set('view engine', 'ejs');
+// app.use(expressLayouts);
+// app.set('view engine', 'ejs');
+app.engine('handlebars',expbs({
+  defaultLayout:'main',
+  layoutsDir:path.join(__dirname,'views/layouts')
+}));
+app.set('view engine','handlebars');
+app.use(express.static('public'));
+app.use('/',express.static(__dirname+'/public'));
+
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -56,6 +66,7 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
+app.use('/prod',require('./routes/products.js'));
 
 const PORT = process.env.PORT || 5000;
 

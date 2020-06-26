@@ -1,0 +1,122 @@
+.newz{
+    font-weight: 300;
+    padding: 10.5px 6.67px 6.67px 39.64px;
+    background: url(https://i7.fnp.com/assets/images/simpee-footer-sprite.png) -210px 10px no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    border: 1px solid #a3a5a6;
+        border-right-width: 1px;
+    border-right-width: 0;
+    width: 186px;
+    display: inline-block;
+    height: 37px;
+    margin: 0;
+    font-size: 13px;
+vertical-align: middle;
+}
+
+.cus_container{
+    max-width: 80%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bottom{
+    border-bottom: 1px solid #fff !important;
+}
+
+#footerlast{
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+#footerlast > li > a {
+    color: #666;
+    font-size: 12px;
+    margin: 4px;
+    list-style-type: none;
+    list-style-position: outside;
+    text-decoration: none;
+}
+#footerlast > li{
+    display: inline-block;
+}
+
+#footerlast > li::after {
+    content: "|";
+}
+
+.bgg{
+    background-color: #f8f8f8;
+    padding-bottom: 50px;
+}
+.bg{
+    background-color: #f8f8f8;
+    padding: 50px;
+}
+
+.grid-center{
+
+    justify-content: center;
+    text-align: center !important;
+    display: grid;
+}
+
+.connect{
+    width: 130px;
+    height: 30px;
+    background: url(https://i7.fnp.com/assets/images/simpee-footer-sprite.png) 0 0 no-repeat;
+}
+
+.trans-info{
+    width: 241px;
+    height: 62px;
+    background: url(https://i7.fnp.com/assets/images/simpee-footer-sprite.png) 0 -42px no-repeat;
+}
+
+.btn-newz{
+    border-radius: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f78828;
+    color: #f9f9f9;
+    border: 1px solid #da7532;
+    padding: 0 16px;
+    display: inline-block;
+    height: 37px;
+    vertical-align: middle;
+    width: auto;
+    margin: 0 -4px 0;
+}
+.content{
+    top:151px !important;
+    margin-bottom: 149px;
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+
+@media (max-width:600px){
+    .content{
+        top:180px !important;
+        margin-bottom: 180px;
+    }
+    .cus_container{
+        max-width: 100%;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width:1200px){
+        .cus_container{
+        max-width: 100%;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

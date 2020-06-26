@@ -1,0 +1,79 @@
+<body style="background-color: #f8f8f8">
+	{{> basicHeader}}
+	<div class="login">
+		<section class="login_container p-3">
+			<br><br><br>
+			<div class="rounded">
+				{{> messages}}
+				<div class="row">
+					<div class="col-sm-8 khel cus_shadow card">
+						<div class="row">
+							<div class="col-12">
+								<div class="form-wrap p-4">
+									<h5 class="reg">Register</h5>
+									<p class="wel">Welcome, we are glad you are here!</p>
+									    <form action="/users/register" method="POST">
+										<div class="form-group">
+										<label for="name">Name</label>
+										<input
+											type="name"
+											id="name"
+											name="name"
+											class="form-control"
+											placeholder="Enter Name"
+										/>
+										</div>
+										<div class="form-group">
+										<label for="email">Email</label>
+										<input
+											type="email"
+											id="email"
+											name="email"
+											class="form-control"
+											placeholder="Enter Email"
+										/>
+										</div>
+										<div class="form-group">
+										<label for="password">Password</label>
+										<input
+											type="password"
+											id="password"
+											name="password"
+											class="form-control"
+											placeholder="Create Password"
+										/>
+										</div>
+										<div class="form-group">
+										<label for="password2">Phone Number</label>
+										<input
+											type="number"
+											id="phone"
+											name="phone"
+											class="form-control"
+											placeholder="Add Number"
+										/>
+										</div>
+										<button type="submit" class="btn btn-primary btn-block">
+										Register
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 p-5">
+						<img src="/img/forLogin.png">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+
+</body>
+
+
+
+
+</html>

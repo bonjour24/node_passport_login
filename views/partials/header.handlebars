@@ -1,0 +1,268 @@
+<header class="fixed-top">
+		<div class="headInfo">
+			<div id="info">
+				<div class="wrapper">
+					<ol style="list-style: none;">
+                        <li><a href="/users/login">Login</a></li>
+                        <li><a href="/users/register">Register</a></li>
+					</ol>
+				</div>	
+			</div>		
+		</div>
+		<div class="white">
+			<div class="container">
+		    	<div class="top">
+			        <nav class="navbar navbar-expand-lg navbar-light ">
+			            <img id="logo" src="https://engagenreap.pythonanywhere.com/static/logo2.png" alt="EnR">            
+			            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			                <span class="navbar-toggler-icon"></span>
+			            </button>
+			            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			                <form id="customSearch" class="form-inline my-2 my-lg-0">
+			                    <input id="form" class="form-control" type="search" placeholder="Search">
+			                    <button id="searchBtn" class="btn btn-warning my-2 my-sm-2" type="submit"><i style="color: white;" class="fa fa-search"></i></button>
+			                </form>
+			                <button id="location" class="ml-sm-2 btn"><i class="fas fa-map-pin"></i>&nbsp;Add Location</button>
+			                <div id="items" class="navbar-nav ml-auto mt-2 mt-lg-0">
+			                    <div class="items">
+			                        <i class="far fa-clock mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Need Today?</a></h6>
+			                    </div>
+			                    <div class="items">
+			                        <i class="fas fa-shopping-cart mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Cart</a></h6>
+			                    </div>
+			                    <div class="items">
+			                        <i class="far fa-user mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Hi 
+										{{#each user}}
+										{{this.name}}
+										{{/each}}
+									</a></h6>
+			                    </div>  
+			                    <div class="items">
+			                        <i class="far fa-question-circle mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Help Center</a></h6>
+			                    </div>
+			                </div> 
+			                <form id="bSearch" class="form-inline my-2 my-lg-0">
+			                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+			                    <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+			                </form>
+			            </div>
+			        </nav>
+		    	</div>
+			</div>
+		</div>
+	    <div id="nav-footer" class="nav-footer">
+	        <div class="rect cus_container">
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat" style="color:#e53333 !important; ">Father's Day&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="/gifts" class="ml-sm-2 nav-cat mr-sm-2">Gifts&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Birthday&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Anniversary&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Occassions&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	        </div>
+	  	</div>
+	</header>

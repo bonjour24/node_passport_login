@@ -1,0 +1,11 @@
+{{#if prods}}
+    {{#each prods}}
+        {{#each this}}
+        {{#if this._id}}
+        {{this.name}}
+        {{this.cat}}
+        {{this.price}} <br>
+        {{/if}}
+        {{/each}}
+    {{/each}}
+{{/if}}

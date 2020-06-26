@@ -1,0 +1,601 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./gifts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>Gifts</title>
+</head>
+<body>
+	<header id="navbar_top" class="b fixed-top">
+		<div class="headInfo">
+			<div id="info">
+				<div class="wrapper">
+					<ol>
+					</ol>
+				</div>	
+			</div>		
+		</div>
+		<div class="white">
+			<div class="cus_container">
+		    	<div class="top">
+			        <nav class="navbar navbar-expand-lg navbar-light ">
+			            <img id="logo" src="https://engagenreap.pythonanywhere.com/static/logo2.png" alt="EnR">            
+			            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			                <span class="navbar-toggler-icon"></span>
+			            </button>
+			            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			                <form id="customSearch" class="form-inline my-2 my-lg-0">
+			                    <input id="form" class="form-control" type="search" placeholder="Search">
+			                    <button id="searchBtn" class="btn btn-warning my-2 my-sm-2" type="submit"><i style="color: white;" class="fa fa-search"></i></button>
+			                </form>
+			                <button id="location" class="ml-sm-2 btn"><i class="fas fa-map-pin"></i>&nbsp;Add Location</button>
+			                <div id="items" class="navbar-nav ml-auto mt-2 mt-lg-0">
+			                    <div class="items">
+			                        <i class="far fa-clock mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Need Today?</a></h6>
+			                    </div>
+			                    <div class="items">
+			                        <i class="fas fa-shopping-cart mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Cart</a></h6>
+			                    </div>
+			                    <div class="items">
+			                        <i class="far fa-user mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Hi</a></h6>
+			                    </div>  
+			                    <div class="items">
+			                        <i class="far fa-question-circle mb-sm-2 fa-lg"><a href=""></a></i>
+			                        <h6><a href="">Help Center</a></h6>
+			                    </div>
+			                </div> 
+			                <form id="bSearch" class="form-inline my-2 my-lg-0">
+			                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+			                    <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+			                </form>
+			            </div>
+			        </nav>
+		    	</div>
+			</div>
+		</div>
+	    <div id="nav-footer" class="nav-footer">
+	        <div class="rect cus_container">
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat" style="color:#e53333 !important; ">Father's Day&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li"><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Gifts&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li"><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Birthday&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li"><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Anniversary&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li"><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            <div class="dd1">
+	            	<a href="#" class="ml-sm-2 nav-cat mr-sm-2">Occassions&nbsp;<b class="fas fa-angle-down"></b></a>
+	                <div class="dd-content1">
+	                	<div class="row">
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Cakes</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3 white">
+	                			<ol class="nobull"><h5 class="subh">Plants</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                				
+	                			</ol>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<ol class="nobull"><h5 class="subh">Personalized Gifts</h5>
+	                				<li><a id="dropy" href="#">First Gift</a></li>
+	                				<li><a id="dropy" href="#">Second Gift</a></li>
+	                				<li><a id="dropy" href="#">Third Gift</a></li>
+	                				<li><a id="dropy" href="#">Forth Gift</a></li>
+	                			</ol>
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+	            
+	        </div>
+	  	</div>
+	</header>
+
+
+	<div class="content">
+		<section id="1">
+			<div class="w-100">
+				<a href="#"><img class="img-fluid" src="https://i1.fnp.com/assets/images/custom/birthday-micro/top-banners/DT-Birthday-27-nov-2019.jpg"></a>
+			</div>
+			<br><br>
+		</section>
+
+		<section id="4">
+			<div class="cus_container border rounded shadow text-center" style="background-color: white; padding: 20px;">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h3 class="">Birthday Gifts Online</h3>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-md-4">
+						<a href="#">
+							<div class="card">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/assets/images/custom/birthday-micro/top-categories/DigitalGifts--Category-8-may-2020.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Digital Gifts</h6></div></a>	
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#">
+							<div class="card">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/assets/images/custom/birthday-micro/top-categories/Birthday-Cakes-10-sept-2019.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Cakes</h6></div></a>	
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#">
+							<div class="card">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/assets/images/custom/birthday-micro/top-categories/Birthday-Best-Seller-Gifts-10-sept-2019.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Best Seller Gifts</h6></div></a>	
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</section>
+
+		<section>
+			<div class="cus_container rounded bg-white" style="padding: 20px;padding-bottom: 0;"><br>
+				<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4 text-center">
+						<h3 class="">Cakes for Birthday</h3>
+					</div>
+					<div class="col-sm-4">
+						<a href="#" class="btn btn-success float-right">View All</a>
+					</div>
+				</div><br><br>
+				<div class="row ">
+					<div class="col-sm-4">
+						<div class="card">
+							<img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/cakes/eggless-cakes-desk.jpg">
+						</div>
+						<div class="text-center card-over">
+							<h3 class="wh">Eggless Cakes</h3><br>
+							<a href="#" class="btn btn-white">Explore Now</a><br>
+						</div>
+						<div class="extra">
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card">
+							<img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/cakes/premium-cakes-desk.jpg">
+						</div>
+						<div class="text-center card-over">
+							<h3 class="wh">Premium Cakes</h3><br>
+							<a href="#" class="btn btn-white">Explore Now</a><br>
+						</div>
+						<div class="extra">
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card">
+							<img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/cakes/photo_cakes-desk.jpg">
+						</div>
+						<div class="text-center card-over">
+							<h3 class="wh">Photo Cakes</h3><br>
+							<a href="#" class="btn btn-white">Explore Now</a><br>
+						</div>
+						<div class="extra">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section>
+			<br><br>
+			<div class="cus_container rounded bg-white" style="padding: 20px;"><br>
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h3 class="">Flowers for Birthday</h3>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="card">
+							<a href="#"><img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/flowers/premium-flowers-24-dec-desk.jpg"></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="card">
+									<a href=""><img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/flowers/best-selling-flowers-desk.jpg"></a>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 15px;">
+							<div class="col-sm-6">
+								<div class="card">
+									<a href=""><img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/flowers/orchid-flowers-desk.jpg"></a>			
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="card">
+									<a href=""><img class="card-img-top" src="https://i1.fnp.com/assets/images/custom/birthday-micro/flowers/exotic-flowers-desk.jpg"></a>			
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="2" class="cus_container text-center">
+			<br><br>	
+			<div class="white rounded">
+				<br><h2>Birthday Gifts For</h2><br>
+				<div class="row">	
+					<div class="w-10"></div>
+					<a href="#" class="w-10">
+						<div class="border circle shadow">
+							<img class="circle" src="/img/gf.png">
+						</div>
+						<label>Girlfriend</label>
+					</a>
+					<a href="#" class="w-10">
+						<div class="border circle shadow">
+							<img class="circle" src="img/bf.png"></div>
+						<label>Boyfriend</label>
+					</a>
+					<a href="#" class="w-10">
+						<div class="border circle shadow">
+							<img class="circle" src="img/her.png">
+						</div>
+						<label>Her</label>
+					</a>
+					<a href="#" class="w-10">
+						<div class="border circle shadow">
+							<img class="circle" src="img/him.png">
+						</div>
+						<label>Him</label>
+					</a>
+					<a href="#" class="w-10">
+						<div class="border circle shadow">
+							<img class="circle" src="img/wife.png">
+						
+						</div>
+						<label>Wife</label>
+					</a>
+					<a href="#" class="w-10">
+						<div class="border circle shadow">
+							<img class="circle" src="img/husband.png">
+						
+						</div>
+						<label>Husband</label>
+					</a>
+				</div>
+				<br><br>
+			</div>
+		</section>
+
+		<section id="5">
+			<br><br>
+			<div class="cus_container border rounded shadow text-left" style="background-color: white; padding: 20px;">
+				<div class="row">
+					<div class="col-sm-6 text-left">
+						<h3 class="float-left ">Birthday Best Seller</h3>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="card">
+							<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20190520192540/fresh-vanilla-cake_1.jpg">
+							<div class="card-body">
+								<a href="#"><div class="card-title" style="color: black;"><h6>Fresh Vanilla Cake</h6></div></a>	
+								<p style="font-size: 18px; font-weight: 600;"> ₹ 499</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card">
+							<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20190423192524/special-surprise-arrangement_1.jpg">
+							<div class="card-body">
+								<a href="#"><div class="card-title" style="color: black;"><h6>Special Purpose Arrangement</h6></div></a>	
+								<p style="font-size: 18px; font-weight: 600;"> ₹ 549</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card">
+							<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20200114173219/personalized-cushion-gift_1.jpg">
+							<div class="card-body">
+								<a href="#"><div class="card-title" style="color: black;"><h6>Personalized Cusion</h6></div></a>	
+								<p style="font-size: 18px; font-weight: 600;"> ₹ 599</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card">
+							<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20180604102052/rose-repose_1.jpg">
+							<div class="card-body">
+								<a href="#"><div class="card-title" style="color: black;"><h6>Rose Repose</h6></div></a>	
+								<p style="font-size: 18px; font-weight: 600;"> ₹ 999</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</section>
+	</div>
+
+
+	<footer class="footer bgg">
+		<div class="cus_container bottom">
+			<div class="row">
+				<div class="col-sm-4 text-center bg">
+					<small>SIGN UP FOR EMAIL OFFERS & UPDATES</small>
+					<form class="" >
+						<input class="form-wrap newz" placeholder="Email" type="email" id='email4newz'>
+						<button class="btn-newz " type="submit" value="submit">SUBMIT</button>
+					</form>
+				</div>
+
+				<div class="col-sm-4 border-left border-right border-white grid-center bg">
+					<small>CONNECT WITH US</small>
+					<div class="connect"></div>
+					
+				</div>
+				<div class="col-sm-4 grid-center bg">
+					<small>SECURE ORDERING & TRANSACTIONS</small>
+					<div class="trans-info"></div>
+				</div>
+			</div>
+		</div>
+		<div class="cus_container text-center pt-4 pb-4 bottom">
+			<img class="img-fluid" src="https://i3.fnp.com/assets/images/custom/brands-14-jan-2019.png" border="0">
+		</div>
+		<div class="cus_container">
+			<div id="text-center">
+			<ul id="footerlast">
+				<li><a href="#">About Us</a></li>
+				<li style="padding-left: 0px;"><a href="#">EnR Team</a></li>
+				<li style="padding-left: 0px;"><a href="#">Careers</a></li>
+				<li style="padding-left: 0px;"><a href="#">Contact Us</a></li>
+				<li style="padding-left: 0px;"><a href="#">Testimonials</a></li>
+				<li style="padding-left: 0px;"><a href="#">Terms &amp; Conditions</a></li>
+				<li style="padding-left: 0px;"><a href="#">Disclaimer</a></li>
+				<li style="padding-left: 0px;"><a href="#">Terms Of Use</a></li>
+				<li style="padding-left: 0px;"><a href="#">Privacy Policy</a></li>
+				<li style="padding-left: 0px;"><a href="#"></a></li>
+				<li style="padding-left: 0px;"><a href="#">Retail Stores</a></li>
+				<li style="padding-left: 0px;"><a href="#">Franchise</a></li>
+				<li style="padding-left: 0px;"><a href="#">Blog</a></li>
+				<li style="padding-left: 0px;"><a href="#">Affiliate Program</a></li>
+				<li style="padding-left: 0px;"><a href="#">Flower Astrology</a></li>
+				<li style="padding-left: 0px;"><a href="#">Download App</a></li>
+				<li style="padding-left: 0px;"><a href="#">Article Hub</a></li>
+				<li style="padding-left: 0px;"><a href="#">Quotes N Wishes</a></li>
+				<li style="padding-left: 0px;"><a href="#">Decoration Services</a></li>
+				<li style="padding-left: 0px;"><a href="#">Care Guide</a></li>
+				<li style="padding-left: 0px;"><a href="temap">HTML sitemap</a></li>
+			</ul>
+			</div>
+		</div>
+	</footer>
+
+
+
+    <script>
+
+        if ($(window).width() > 992) {
+  $(window).scroll(function(){  
+     if ($(this).scrollTop() > 60) {
+        $('#navbar_top').addClass("fixed-top");
+        // add padding top to show content behind navbar
+        $('body').css('padding-top', $('.b').outerHeight() + 'px');
+      }else{
+        $('#navbar_top').removeClass("fixed-top");
+         // remove padding top from body
+        $('body').css('padding-top', '0');
+      }   
+  });
+}
+    </script>
+</body>
+
+
+
+
+</html>
