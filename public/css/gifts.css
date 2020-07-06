@@ -13,10 +13,22 @@
 	color: black;
 	line-height: 20px;
 }
+
+
+.bg2{
+	background: rgb(102, 102, 102) none repeat scroll 0% 0%;
+	color: white;
+}
+
+
 .align{
 	min-width: max-content;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.t{
+	top:0 !important;
 }
 
 a:hover{
@@ -90,12 +102,25 @@ a:hover{
 	padding-bottom:15px;
 }
 
+.product:hover{
+	box-shadow: 0 12px 29px rgba(0,0,0,.25);
+}
+
 .extra{
 	height: 65;
 	position: relative;
 	top: -125;
 	background: white;
 }
+.navbar2{
+    position: fixed;
+    top: 480px;
+    z-index: 1040;
+    width: 100%;
+    transition: top .3s;
+    display: block;
+}
+
 
 .col-sm-4:hover .card-over{
 	top: -120;
@@ -106,6 +131,9 @@ a:hover{
   box-shadow: 1;
 }
 
+.cus_shadow{
+	box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
 
 
 .btn-white{

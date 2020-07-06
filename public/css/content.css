@@ -9,6 +9,110 @@
 	top: -50px;
 }
 
+.active{
+	color:skyblue;
+	font-weight: 600
+}
+
+.edit{
+	max-width: max-content;
+	transition: all ease-in-out .35s;
+}
+
+.edit:hover .pos{
+	color: grey;
+	opacity: 1;
+}
+
+.edit2{
+	border: .3px grey solid !important; 
+}
+
+.edit:hover{
+	transform: scale(1.1);
+	border: .3px grey solid !important; 
+}
+
+.btn-outline-dark:hover{
+	color: white !important;
+}
+
+.pos{
+	position: absolute;
+	top: 10;
+	right: 10;
+	opacity: 0;
+	line-height: 1;
+	transition: all ease-in-out .3s;
+}
+
+.font .card{
+	border: none;
+}
+
+.font{
+	color: grey;
+	font-family: 'Roboto',Arial,sans-serif;
+}
+
+.font .col-xl-2 .card{
+
+	border-radius: 0;
+	border-right: .3px grey solid; 
+}
+.font .col-xl-2 a{
+	color: grey;
+}
+
+.font .col-xl-2 a h6{
+	transition: all ease-in-out 0.3s;
+}
+.font .col-xl-2 a:hover h6{
+	text-align: left;
+	color: skyblue;
+	transform: scale(1.05);
+}
+
+section .card table th {
+	color: grey;
+}
+
+section .col-sm-5{
+	line-height: 0.3;
+}
+
+section .col-xl-4 .card h5{
+	font-weight: 600;
+}
+
+.ban{
+	height: 500px;
+}
+
+.cat-img{
+	height: 280;
+	width: 100%;
+}
+
+.cus_containerp input{
+	background: #fff;
+border: 1px solid #999;
+border-radius: 4px;
+padding: 9px;
+    padding-left: 9px;
+font-size: 14px;
+font-weight: 400;
+box-shadow: inset 0 2px 4px rgba(0,0,0,.1);
+}
+
+.cus_containerp{
+
+    max-width: 60%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .bor{
 	background-color: #f6f6f6; 
 	line-height: 0.3; 
@@ -49,6 +153,7 @@
 	min-width: max-content;
 	margin-left: auto;
 	margin-right: auto;
+	margin: auto;
 }
 
 a:hover{
@@ -74,6 +179,19 @@ a:hover{
 	font-size: 18px;
 	font-weight: 600;
 	background-color: #ff9212;
+	color: white;
+}
+.btn-buy{
+	font-size: 18px;
+	font-weight: 600;
+	background-color: #009d43;
+	color: white;
+}
+
+.btn-buy:hover{
+	background: #038e3e;
+	font-size: 18px;
+	font-weight: 600;
 	color: white;
 }
 
@@ -124,11 +242,13 @@ a:hover{
 
 .card img {
   transition: transform .5s ease;
+  overflow: hidden;
 }
 
 
-.card:hover img {
+.card:hover .card-img-top {
   transform: scale(1.04);
+  z-index: 0;
 }
 
 .cakes{
@@ -149,9 +269,57 @@ a:hover{
 		width:25%;
 	}
 }
-.cakes .col-cake{
-    width: 80%;
+
+.cus_shadow{
+	box-shadow: 0 2px 3px rgba(0,0,0,0.3);
 }
+.help{
+	text-align: center;
+    justify-content: center;
+    display: grid;
+    bottom: -16px;
+	position: sticky;
+}
+.help_sh{
+	padding: 10px;
+	width:150px;
+	color: white;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.9));
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px; 
+
+}
+
+.over{
+	overflow: inherit !important;
+	height: 70% !important;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cus_containerp .card{
+	height: min-content;
+	padding:0;
+	border:none;
+	width: min-content;
+	overflow: initial;
+}
+
+.cus_containerp .img-fluid{
+	position: inherit;
+	z-index: 100;
+}
+
+.scrollable{
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+    padding:40px; 
+    overflow: scroll; 
+    overflow-x: hidden;
+}
+
+
+
 
 @media (max-width:800px){
 	.search-container{
@@ -172,7 +340,17 @@ a:hover{
     .col-md-3{
         width: 50%;
     }
-    .cakes .col-cake{
-        width: 50%;
-    }
+}
+
+@media (max-width: 1100px){
+	.cus_containerp .card{
+		width: 100%;
+	}
+	.cus_containerp{
+
+	    max-width: 100%;
+	    width: 100%;
+	    margin-right: auto;
+	    margin-left: auto;
+	}
 }

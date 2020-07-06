@@ -1,6 +1,10 @@
 html{
     font-family: 'Roboto',Arial,sans-serif;
 }
+body{
+    background-color: black;
+}
+
 #items a,#items i{
     color: rgb(128, 128, 128);
     text-decoration: none;
@@ -40,29 +44,28 @@ html{
 }
 
 #form{
-    font-weight: normal;
-    color: rgba(0,0,0,0.75);
     font-size: 13px;
-    width: 350px;
-    display: inline-block;
-    margin: 0;
-    height: auto;
-    transition: none;
-    vertical-align: middle;
+    width: 200px;
     border: 1px solid #bbb;
         border-right-color: rgb(187, 187, 187);
         border-right-style: solid;
         border-right-width: 1px;
     border-right: 0;
     box-shadow: 0 0 5px rgba(0,0,0,0.2) inset;
-    border-radius: 4px 0 0 4px;
-    float: left;
-    max-height: 40px;
+    border-radius: 20px 0 0 20px;
     min-height: 40px;
-    background: #fdfdfd;
     transition: all ease-in-out .25s;
-    padding: 12px;
-    box-sizing: border-box;
+    opacity: 0.3;
+}
+
+#customSearch:hover #searchBtn{
+    border-radius: 0 20px 20px 0;
+}
+
+#customSearch:hover #form{
+    width: 280px;
+    font-size: 15px;
+    opacity: 1;
 }
 
 
@@ -73,19 +76,11 @@ html{
 #searchBtn{
     background: #ff9212;
     min-height: 40px;
-    max-height: 40px;
-    width: 41px;
-    vertical-align: middle;
     cursor: pointer;
-    margin: 0 0 0 -1px;
-    min-width: auto;
     color: #fff;
     border: 1px solid #ff9212;
-    float: left;
-    line-height: 40px;
-    right: 0;
-    border-radius: 0 4px 4px 0;
-    transition: all ease-in-out .25s;
+    border-radius: 2px;
+    transition: all ease-in-out .3s;
 }
 #customSearch{
     height: 42px;
@@ -107,6 +102,11 @@ html{
     display: inline-block;
     padding: 10px;
 }
+dd2 {
+    position: initial;
+    display: inline-block;
+    padding: 10px;
+}
 
 .dd-content1 {
     display: none;
@@ -114,25 +114,44 @@ html{
     background-color: #f9f9f9;
     min-width: 700px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 1070;
     left: 10%;
     right: 10%;
 }
-.white{
-    background-color: white;
+.dd-content2 {
+    width: max-content;
+    display: none;
+    position: absolute;
+    background: rgb(81, 81, 81) none repeat scroll 0% 0%;
+    min-width: 700px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
-.dd1:hover{
+.white{
     background-color: white;
 }
 
 .dd1:hover .dd-content1 {
   display: block;
 }
+
+
+.dd2:hover .dd-content2 {
+  display: block;
+}
+
 #dropy{
     font-size: 14px;
     color: black;
     text-decoration: none !important;
     padding: 4px;
+}
+#dropy2{
+    font-size: 12px;
+    color: rgb(170, 170, 170);
+    text-decoration: none !important;
+    padding: 4px;
+    font-weight: 600;
 }
 #dropy:hover{
     font-size: 15px;
@@ -140,6 +159,10 @@ html{
     opacity: 1;
     position: relative;
     transition: all ease-in-out .5s;
+
+}
+#dropy2:hover{
+    background-color: black;
 
 }
 .nobull{
@@ -162,6 +185,16 @@ html{
     color: #222;
     font-style: normal;
 }
+.subh2{  
+    font-size: 13px;
+    font-weight: 900;
+    margin: 0;
+    padding: 5px;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: rgb(170, 170, 170);
+    font-style: normal;
+}
 
 
 
@@ -172,20 +205,25 @@ html{
     background-color: #f2f2f2;
 }
 
-
 .nav-footer{
   transition: opacity .3s;
   opacity: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+#navbar_top{
+    transition: top .5s;
+}
 
-.nav-footer.hide {
+.nn{
+    top:-170;
+    overflow: hidden;
+}
+
+.hide {
   opacity: 0;
 }
-.bl{
-    display: none;
-}
-
 @media (max-width:600px){
     #customSearch{
         display: none;

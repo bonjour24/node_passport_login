@@ -1,0 +1,104 @@
+
+{{> header}}
+
+<div class="content">
+		<section class="white cus_shadow">
+			<div class="cus_containerp">
+				<div class="row">
+                    {{#each prodFound}}
+                    {{#if this.price}}
+					<div class="col-sm-6 card" style="padding: 40px;">
+						<div class="oo">
+							<img class="card-img-top" src="{{this.image}}">
+						</div>
+						<img class="img-fluid" src="/img/for-indi-product.png">
+
+					</div>
+					<div class="col-sm-6 scrollable">
+						<div class="text-left" style="height: 50">
+							<h3>{{this.name}}</h3>
+							<h6 class="float-left" style="line-height: 3; color: red;">₹&nbsp;</h6><h1 style="color: red">&nbsp;{{this.price}}</h1>	
+							<br><br>
+							<div class="row" >
+								<div class="col-sm-6">
+									    <form action="/products/{{this._id}}" method="post">
+                                        <div class="hide">
+                                        <input type="hidden" name="product_id" id="quantity" value="{{this._id}}" ></input>
+                                        <input type="hidden" name="priceHidden" id="priceHidden" value="{{this.price}}"></input>
+                                        <input type="text" id="name" name="name" class="form-control" value="{{this.name}}"></input>
+                                        <input type="text" name="priceValue" id="priceValue" class="form-control" value="{{this.price}}"></input>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg">Add to Cart</button>
+                                        </form>
+								</div>
+                                {{!-- Add this later --}}
+								{{!-- <div class="col-sm-6">
+									<a href="#" class="btn btn-col w-100">Buy Now</a>
+									<br><br>
+								</div> --}}
+							</div>
+							<h5>Description</h5><hr>
+									<p>some description of the product</p>
+									<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>More text<br><br><br><br><br><br><br><br>and more
+						</div>
+					</div>
+                    {{/if}}
+                    {{/each}}
+				</div>
+			</div>
+		</section>	
+
+		<section id="5">
+			<br><br>
+			<div class="white cus_shadow">
+				<div class="cus_container text-left" style="padding: 20px;">
+					<div class="row">
+						<div class="col-sm-6 text-left">
+							<h3 class="float-left ">You may also like</h3>
+						</div>
+					</div><br>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="card product">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20190520192540/fresh-vanilla-cake_1.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Fresh Vanilla Cake</h6></div></a>	
+									<p style="font-size: 18px; font-weight: 600;"> ₹ 499</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card product">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20190423192524/special-surprise-arrangement_1.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Special Purpose Arrangement</h6></div></a>	
+									<p style="font-size: 18px; font-weight: 600;"> ₹ 549</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card product">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20200114173219/personalized-cushion-gift_1.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Personalized Cusion</h6></div></a>	
+									<p style="font-size: 18px; font-weight: 600;"> ₹ 599</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card product">
+								<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20180604102052/rose-repose_1.jpg">
+								<div class="card-body">
+									<a href="#"><div class="card-title" style="color: black;"><h6>Rose Repose</h6></div></a>	
+									<p style="font-size: 18px; font-weight: 600;"> ₹ 999</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</section>
+</div>
+
+{{> footer}}

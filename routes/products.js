@@ -13,8 +13,8 @@ router.get('/add',(req,res)=>{
     res.render('addProd');
 });
 
-router.post('/prod/add',(req,res)=>{
-    const {cat , name ,price} = req.body;
+router.post('/add',(req,res)=>{
+    const {cat , name ,price , image} = req.body;
     Products.findOne({name:name}).then(prod=>{
         if(prod)
             console.log("Chal be");
@@ -22,16 +22,17 @@ router.post('/prod/add',(req,res)=>{
             const newProd = new Products({
                 cat,
                 name,
-                price
+                price,
+                image,
+                vendor:'5ef9c1c5da5f87140cbef2d6'
             });
             newProd.save(function (err) {
                 if (err) return console.log(err);
                 else console.log('Done!')
               });
-        }
-    })
-})
- 
+        };
+    });
+});
 
 console.log("Go learn Express.js");
 

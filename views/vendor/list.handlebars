@@ -1,0 +1,31 @@
+{{> vendorHeader}}
+    <br><br><br><br><br><br><br><br>
+    
+    <a href="/vendor/add/{{id}}" role="button" class="btn btn-primary btn-lg">Add Products Here</a>
+<div class="container" style="background-color: white;">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each prods}}
+      {{#each this}}
+      {{#if this.price}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td><img style="height: 20px; width:20px;" src="{{this.image}}" alt=""></td>
+      <td>{{this.name}}</td>
+      <td>{{this.price}}</td>
+    </tr>
+    {{/if}}
+    {{/each}}
+    {{/each}}
+  </tbody>
+</table>
+</div>

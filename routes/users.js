@@ -7,14 +7,13 @@ const User = require('../models/User');
 const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
-router.get('/login', forwardAuthenticated, (req, res) => {
-  res.render('login',{title:'Login'});
-});
+router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+
 
 // Register Page
 router.get('/register', forwardAuthenticated, (req, res) => res.render('signup'));
 
-// Register
+// Register (Post)
 router.post('/register', (req, res) => {
   const { name, email, password, phone } = req.body;
   let errors = [];
@@ -68,7 +67,18 @@ router.post('/register', (req, res) => {
                   'success_msg',
                   'You are now registered and can log in'
                 );
-                res.redirect('/users/login',{title:'Login'});
+                res.redirect('/users/login');
+              })
+              .then(user=>{
+                  var cart = new Cart();
+                  cart.owner = user._id;
+                  cart.save(function(err) {
+                    if (err) return next(err);
+                    req.logIn(user, function(err) {
+                      if (err) return next(err);
+                      res.redirect('/profile');
+                    })
+                })
               })
               .catch(err => console.log(err));
           });
@@ -78,7 +88,7 @@ router.post('/register', (req, res) => {
   }
 });
 
-// Login
+// Login Post
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/home',

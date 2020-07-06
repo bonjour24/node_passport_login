@@ -1,0 +1,97 @@
+{{> header}}
+
+	<div class="content">
+		<section class="cus_container p-5"><br>
+			<div class="p-5">
+				<div class="row">
+				    <div class="col-8">
+				      <table class="table product-table" cellpadding="10px">
+				        <h3>Your Cart</h3> <br>
+				              <!-- Table head -->
+				              <thead class="mdb-color lighten-5">
+				                <tr>
+				                  <th></th>
+				                  <th class="font-weight-bold">
+				                    <strong>Item Description</strong>
+				                  </th>
+				                  <th></th>
+				                  <th class="font-weight-bold">
+				                    <strong>Quantity</strong>
+				                  </th>
+				                  <th class="font-weight-bold">
+				                    <strong>Subtotal </strong>
+				                  </th>
+				                  <th></th>
+				                </tr>
+				              </thead>
+                      {{#each itemy}}
+                      {{#each this}}
+				              {{#if this.price}}
+                      <tbody>
+				                  <tr>
+				                    <th scope="row" width="10%">
+				                      <img id="cartProdImg" src="{{this.image}}" alt="Product Image" class="img-fluid z-depth-0">
+				                    </th>
+				                    <td>
+				                      <h5 class="mt-3">
+				                        <a href="" style="line-height: 10px; text-decoration:none;color:black"><strong> {{this.name}} </strong></a>
+				                      </h5>
+				                      <p class="text-muted">by ENR</p>
+				                    </td>
+				                    <td></td>
+				                    <td>
+				                      <div style="margin-top:20px" class="row">
+				                        <div  class="col-sm-2">
+				                          <a href="/cart/minus/{{this.item}}" ><i class="fa fa-minus" aria-hidden="true"></i></a>
+				                        </div>
+				                        <div class="col-sm-1">
+				                          <h6 style="line-height: 50%;" style="padding-top:10px;">{{this.quantity}}</h6>
+				                        </div>
+				                        <div class="col-sm-1">
+				                          <a href="/cart/plus/{{this.item}}"  type="button" href=""><i class="fa fa-plus" aria-hidden="true"></i></a>
+				                        </div>
+				                      </div>
+				                    </td>
+				                    <td class="font-weight-bold">
+				                      <div style="margin-top:17px" class="">
+				                      <strong >£ {{this.price}}</strong>
+				                      </div>
+				                    </td>
+				                    <td>
+				                      <div style="margin-top: 20px;" class="">
+				                        <a value={{this.price}} type="button" data-toggle="tooltip" data-placement="top" href="/cart/delete/{{this._id}}"><i class="far fa-trash-alt"></i></a>
+				                        </a>
+				                      </div>
+				                      </td>
+				                  </tr>
+				              </tbody>
+                      {{/if}}
+                      {{/each}}
+                    {{/each}}
+				            </table>
+				    </div>
+            {{#each foundCart}}
+            {{#if this.total}}
+				    <div id="bigOrder" class="col-lg-4">
+				      <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+				      <div class="p-4">
+				        <p class="font-italic mb-4">Delivery  and additional costs are calculated based on values you have entered.</p>
+				        <ul class="list-unstyled mb-4">
+				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>£ {{this.total}}</strong></li>
+				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Delivery Charges</strong><strong>£ 2.00</strong></li>
+				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>£ 0.50</strong></li>
+				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Promotional Discount</strong><strong>£ -2.50</strong></li>
+				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total </strong>
+				            <h5 class="font-weight-bold">£ {{this.total}} </h5>
+				          </li>
+				        </ul>
+						<a  href="/cart/checkout" class="btn btn-warning rounded-pill py-2 btn-block">Procceed to checkout</a>
+				      </div>
+				    </div>
+            {{/if}}
+            {{/each}}
+				</div> 
+			</div>
+		</section><br><br>
+	</div>
+{{> footer}}

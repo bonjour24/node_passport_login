@@ -1,0 +1,125 @@
+{{> header}}
+
+<div class="content bg-white">
+		<br><br><br>
+		<section id="1">
+			<div class="cus_container">
+				<div class="row font">
+					<div class="col-xl-2 align">
+						<div class="card p-4">
+							<h3 class="active">My Account</h3>
+							<div class="p-3 pt-0">
+								<hr>
+								<h5>My Profile</h5>
+								<a href="#"><h6>Edit Profile</h6></a>
+								<a href="#"><h6>Change Password</h6></a>
+								<hr>
+								<h5>Orders</h5>
+								<a href="#"><h6>My orders</h6></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-1"></div>
+					<div class="col-xl-4 align text-center">
+						<div>
+							<div class="card align edit p-3" style="">
+								<div class="p-2 rounded">
+								<div class="card-title"><h3>{{name}}</h3></div>
+									<div class="">
+										<a href="" class="float-right pos fa fa-edit"></a>
+										<table cellpadding="5">
+											<thead>
+												<tr>
+													<th>Email</th>
+													<th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+													<td>{{email}}</td>
+												</tr>
+												<tr>
+													<th>Phone no</th>
+													<th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+													<td>{{phone}}</td>
+												</tr>
+											</thead>
+										</table>
+									</div>		
+								</div>
+							</div>
+							<br>
+							<div class="card p-3 align edit">
+								<div class="card-title">Last Order</div>
+								<table cellpadding="10">
+									<a href="#" class="pos btn btn-outline-dark">All Orders</a>
+									{{#if last.price}}
+                                    <thead class="table table-stripped">
+										<th>Order Id</th>
+										<th>Product</th>
+										<th>Quantity</th>
+										<th>Price</th>										
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td><a href="#">{{last.item}}</a></td>
+											<td>1</td>
+											<td>{{last.price}}</td>
+										</tr>
+									</tbody>
+                                    {{else}}
+                                    <thead class="table table-stripped">
+										<th>Order Id</th>
+										<th>Product</th>
+										<th>Quantity</th>
+										<th>Price</th>										
+									</thead>
+                                    <h4 style="color: rgb(255, 109, 109);">No Previous Order</h4>
+                                    {{/if}}
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-5">
+						<div class="recom">
+						<div class="title"><h3 style="color: grey">Recommnded</h3></div>
+							<div class="card edit2 product p-0 float-left" style="width: 40%; margin-right: 15px;">
+								<div class="">
+									<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20190520192540/fresh-vanilla-cake_1.jpg">
+									<div class="card-body">
+										<a href="#"><div class="card-title" style="color: black;"><h6>Fresh Vanilla Cake</h6></div></a>	
+										<p style="font-size: 18px; font-weight: 600;"> ₹ 499</p>
+									</div>
+								</div>
+							</div>
+							<div class="card edit2 product p-0" style="width: 40%">
+								<div class="">
+									<img class="card-img-top p-2" src="https://i1.fnp.com/images/pr/l/v20190423192524/special-surprise-arrangement_1.jpg">
+									<div class="card-body">
+										<a href="#"><div class="card-title" style="color: black;"><h6>Choclates</h6></div></a>	
+										<p style="font-size: 18px; font-weight: 600;"> ₹ 549</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<br><br><br>
+	</div>
+
+{{> footer}}
+<script>
+
+        window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+		    if (document.body.scrollTop > 330 || document.documentElement.scrollTop > 330) {
+		        document.getElementById("nav-footer").classList.add("hide");
+		        setTimeout(function(){document.getElementById("nav-footer").classList.add("bl");}, 300);
+		        
+		    } 
+		    else {
+		        document.getElementById("nav-footer").classList.remove("hide");	
+		        setTimeout(function(){document.getElementById("nav-footer").classList.remove("bl");}, 300);
+		    }
+		} 
+    </script>

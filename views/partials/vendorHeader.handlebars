@@ -1,0 +1,85 @@
+<header id="navbar_top" class="fixed-top">
+		<div class="headInfo">
+			<div id="info">
+				<div class="wrapper">
+					<ol>
+					</ol>
+				</div>	
+			</div>		
+		</div>
+		<div class="white">
+			<div class="cus_container">
+		    	<div class="top">
+			        <nav class="navbar navbar-expand-lg navbar-light ">
+			            <img id="logo" src="https://engagenreap.pythonanywhere.com/static/logo2.png" alt="EnR">            
+			            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			                <span class="navbar-toggler-icon"></span>
+			            </button>
+			            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			                <form id="customSearch" class="form-inline my-2 my-lg-0">
+			                    <input id="form" class="form-control" type="search" placeholder="Search">
+			                    <button id="searchBtn" class="btn btn-warning my-2 my-sm-2" type="submit"><i style="color: white;" class="fa fa-search"></i></button>
+			                </form>
+			                <button id="location" class="ml-sm-2 btn"><i class="fas fa-map-pin"></i>&nbsp;Add Location</button>
+							<div id="items" class="navbar-nav ml-auto mt-2 mt-lg-0">
+			                	{{#if user}}
+			                    <a href="/users/logout">
+			                    	<div class="items">
+				                        <i class="fas fa-sign-in-alt mb-sm-2 fa-lg"></i>
+				                        <h6>Logout</h6>
+				                    </div>
+				                </a>
+								{{else}}
+								<a href="/users/login">
+			                    	<div class="items">
+				                        <i class="fas fa-sign-in-alt mb-sm-2 fa-lg"></i>
+				                        <h6>Login</h6>
+				                    </div>
+				                </a>
+								{{/if}}
+			                    <a href="/users/register"> 
+				                    <div class="items">
+				                        <i class="fas fa-user-plus mb-sm-2 fa-lg"></i>
+				                        {{#if user}}
+										<h6>Switch Account</h6>
+										{{else}}
+										<h6>sign Up</h6>
+										{{/if}}
+				                    </div>
+				                </a>
+                                {{#if user}}
+                                {{#each user}}
+                                {{#if this.name}}
+				                <a href="/vendor/products/{{this._id}}">
+				                	<div class="items">
+				                        <i class="fas fa-shopping-cart mb-sm-2 fa-lg"></i>
+				                        <h6>Products</h6>
+				                    </div>
+				                </a>
+                                {{/if}}
+                                {{/each}}
+                                {{/if}}
+			                    <a href="">
+			                    	<div class="items">
+				                        <i class="far fa-user mb-sm-2 fa-lg"></i>
+				                        <h6><a href="">Hi 
+											{{#if user}}
+											{{#each user}}
+											{{this.name}}
+											{{/each}}
+											{{/if}}
+										</a></h6>
+				                    </div>
+			                    </a> 
+			                </div> 
+			                <form id="bSearch" class="form-inline my-2 my-lg-0">
+			                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+			                    <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+			                </form>
+			            </div>
+			        </nav>
+		    	</div>
+			</div>
+		</div>
+	    
+	</header>

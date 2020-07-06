@@ -1,3 +1,8 @@
+footer a{
+    color: black;
+
+}
+
 .newz{
     font-weight: 300;
     padding: 10.5px 6.67px 6.67px 39.64px;
@@ -49,11 +54,11 @@ vertical-align: middle;
 }
 
 .bgg{
-    background-color: #f8f8f8;
+    background-color: #f8f8f8 !important;
     padding-bottom: 50px;
 }
 .bg{
-    background-color: #f8f8f8;
+    background-color: #f8f8f8 !important;
     padding: 50px;
 }
 
@@ -67,14 +72,28 @@ vertical-align: middle;
 .connect{
     width: 130px;
     height: 30px;
-    background: url(https://i7.fnp.com/assets/images/simpee-footer-sprite.png) 0 0 no-repeat;
 }
 
 .trans-info{
     width: 241px;
-    height: 62px;
-    background: url(https://i7.fnp.com/assets/images/simpee-footer-sprite.png) 0 -42px no-repeat;
 }
+
+.bg a:hover .fa-instagram{
+    background: -webkit-linear-gradient(blue, purple, purple, orange);
+    background-clip: border-box;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.bg a:hover .fa-pinterest{
+    background: -webkit-linear-gradient(red, red);
+    background-clip: border-box;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
 
 .btn-newz{
     border-radius: 0;

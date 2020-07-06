@@ -1,10 +1,13 @@
 const mongoose=require('mongoose');
+const { schema } = require('./category');
+const Schema = mongoose.Schema;
 
 var ProductSchema = new mongoose.Schema({
-    category:String,
+    category:{type: Schema.Types.ObjectId, ref: 'Category'},
     name: String,
     price: Number,
-    image: String
+    image: String,
+    vendor:{type: Schema.Types.ObjectId, ref:'Vendor'}
 });
 
 const Products = mongoose.model('Products', ProductSchema);;

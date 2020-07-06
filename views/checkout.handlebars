@@ -1,0 +1,127 @@
+{{> header}}
+
+<body class="bg" style="padding: 0 !important">
+	
+
+	<div style="width:110%" class="content bg" style="padding: 15px;">
+		<section class="">
+			<div  class="cus_containerp">
+				<div class="row">
+					<div class="col-sm-7 scrollable" style="padding:24px;">
+						<div class="card over w-100 cus_shadow rounded white p-3 text-left pl-5 pr-5">
+							<h3 style="font-weight: 900; text-transform: uppercase; font-size: 20px;">Order & Delivery Details</h3>
+							<br><br><hr><br>
+							<div class="rounded bg-success" style="color: white; margin-bottom: 15px; width: max-content">
+								<small style="font-weight: 600; padding: 6px;">Products List</small>
+							</div><br><br>
+							<div class="row">
+                                {{#each items}}
+                                {{#each this}}
+                                {{#if this.price}}
+								<div style="margin-top: 10px;" class="col-12">
+									<img width="80" class="rounded float-left" src="{{this.image}}" alt="{{this.name}}">
+									<div class="float-left">
+									</div>
+									<div class="info" style="padding: 10px;margin-left: 90px;">
+										<small style="font-size: 15px;">{{this.name}}</small>
+										<br><small> {{this.price}}</small>
+									</div>
+								</div> 
+                                {{/if}}
+                                {{/each}}
+                                {{/each}} <br>
+								<div style="margin-top: 30px;" class="col-sm-12">
+									<h5 style="text-transform: uppercase;">Delivery On</h5>
+									<h6 style="color: green;">{{today}}</h6>
+								</div>
+							</div>
+							<br><hr><br>
+							<div class="address card bg-dark w-100 p-3">
+
+								<div class="rounded bg-success" style="color: white; margin-bottom: 15px; width: max-content">
+									<small style="font-weight: 600; padding: 6px;">Address</small>
+								</div><br><br>
+								<form class="p-3"> 
+									<table class="w-100" cellpadding="20">
+										<tbody>
+											<tr>
+												<td><input class="float-left" type="text" name="name" id="name" placeholder="Name"></td>
+											
+												<td><input class="float-right" type="text" name="pin" id="pin" placeholder="Pin Code"></td>
+											</tr>
+											<tr>
+												<td><input class="float-left" type="text" name="address" id="address" placeholder="Address"></td>
+										
+												<td><input class="float-right" type="number" name="ph_no" id="pn_no" placeholder="Phone Number"></td>
+											</tr>
+											<tr>
+												<td><input class="float-left" type="email" name="email" id="email" placeholder="Email"></td>
+										
+											</tr>
+										</tbody>
+									</table>
+									<br>
+								</form>
+							</div>	
+							<hr>	
+							<br>
+							
+							<br><br>
+							<div class="help">
+								<div class="help_sh">
+									<h6 class="help-text">Sroll Here</h6>
+									<i class="fas fa-angle-double-up"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-5 p-4">
+						<div class="text-left card cus_shadow rounded white w-100 p-3">
+							<h5 style="font-weight: 600; font-size: 18px;">PRICE DETAILS</h5>
+							<table class="w-100" cellpadding="8">
+								<tr>
+									<td>Total Product Price</td>
+									<td>₹ {{total}}</td>
+								</tr>
+								<tr>
+									<td>Delivery</td>
+									<td>₹ 49</td>
+								</tr>
+								<tr>
+									<th>Total</th>
+									<th style="color: red;">₹ 598</th>
+								</tr>
+							</table>
+							<hr>
+							<h6 class="text-center"><a href="#">Have a coupon?</a></h6>
+							<form method="POST" id="payment-form" action="/payment">
+                            <input type="hidden" name="stripeMoney" value="{{total}}">
+							<input type="hidden" name="desc" value="{{items}}">
+							<script
+							src="https://checkout.stripe.com/checkout.js"
+							class="stripe-button"
+							data-currency="eur"
+							data-key="pk_test_51H1q12FeEKfkFHBeKcyfHytUK0WMvfJDVt0fJCdiieE0RaxqRXUT9CpaU8gByouLLCybELDcGD2ejHY7Ah424L0800e0vXa8dt"
+							data-amount="{{pay}}"
+							data-description="{{items}}"
+							data-image="/img/enrlogo.png"
+							data-locale="auto">
+							</script>
+							<script>
+								document.getElementsByClassName('stripe-button-el')[0].style.display='None'
+							</script>
+							<button class=" btn btn-outline-dark btn-lg">Pay with Stripe</button>
+							</form>						
+						</div>
+					</div>
+				</div>
+                
+       
+			</div>
+		</section>
+	</div>
+	
+  
+</body>
+
+{{> footer}}

@@ -19,6 +19,34 @@ input{
 .khel{
 	border-top: none;
 }
+.msg-bor{
+	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;	
+	background-color: green;
+	color: white;
+	min-width: 40px;
+	height: 35px;
+}
+.msg{
+	font-size: 22px;
+	color:black;
+	width: 40%;
+	padding:40px;
+	margin-top: 100px;
+}
+.blink_me {
+  animation: blinker .5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+  75%{
+  	opacity: 0;
+  }
+}
 
 .login_container{
 
@@ -77,9 +105,27 @@ input{
 
 
 
+@media (max-width:1350px){
+	.login_container{
+	    max-width: 75%;
+	}
+	
+	.msg{
+		width: 55%
+	}
+}
 
 @media (max-width:1100px){
 	.login_container{
 	    max-width: 100%;
+	}
+	.msg{
+		width: 65%
+	}
+}
+@media (max-width:1000px){
+
+	.msg{
+		width: 100%
 	}
 }
