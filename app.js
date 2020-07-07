@@ -10,6 +10,7 @@ const mainRoute = require('./routes/main');
 const Cart =  require('./models/cart');
 const bcrypt=require('bcryptjs');
 const fx=require('money');
+const categ=require('./models/category');
 fx.base = "EUR";
 fx.rates = {
   "EUR" : 1, // eg. 1 USD === 0.745101 EUR
@@ -31,6 +32,12 @@ mongoose.set('useCreateIndex', true);
 //   if(err) console.log(err);
 //   else console.log("Added");
 // })
+let cat= new categ();
+cat.name = 'anniversary';
+cat.save((err)=>{
+    if(err) console.log(err);
+    else console.log("Added Category :" + cat.name);
+});   
 const app = express();
 
 // Passport Config
