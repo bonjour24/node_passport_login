@@ -8,6 +8,7 @@ const Vendor=require('../models/vendor');
 //Authentication
 const { forwardAuthenticated } = require('../config/vendorAuth');
 const Products = require('../models/products');
+const Category = require('../models/category');
 
 //Regitser Page
 router.get('/register',(req,res)=>{
@@ -104,7 +105,8 @@ router.post('/login', (req, res, next) => {
                 if(err) console.log('No vendor Prods')
                 else{
                     console.log(prods);
-                    res.render('vendor/list',{user:found,prods,id:found._id});
+                    const id=found._id;
+                    res.render('vendor/list',{user:found,prods,id});
                 }
             })
         })
@@ -117,28 +119,30 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/add/:vendor_id',(req,res)=>{
-    res.render('vendor/addProd',{id:req.paramsvendor_id});
+    res.render('vendor/addProd',{id:req.params.vendor_id});
 });
 
 router.post('/add/:vendor_id',(req,res)=>{
     const { name, category ,price ,image} =req.body;
-    Products.findOne({name:name},(err,prod)=>{
-        if(err) console.log(err);
-        else if(prod) console.log('Already exists');
-        else{
-            const newProd= new Products({
-                category,
-                name,
-                price,
-                image,
-                vendor:req.params.vendor_id,
-            })
-            newProd.save()
-            .then(()=>{
-                res.redirect('/vendor/add/:vendor_id')
-            })
-        }
-    })
+    const cat=Category.findOne({name:category},(err,found)=>{
+        Products.findOne({name:name},(err,prod)=>{
+            if(err) console.log(err);
+            else if(prod) console.log('Already exists');
+            else{
+                const newProd= new Products({
+                    category:found._id,
+                    name,
+                    price,
+                    image,
+                    vendor:req.params.vendor_id,
+                })
+                newProd.save()
+                .then(()=>{
+                    res.redirect('/vendor/add/:vendor_id')
+                })
+            }
+        })
+    });
 })
 
 module.exports=router;

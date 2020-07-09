@@ -31,13 +31,7 @@ mongoose.set('useCreateIndex', true);
 // vendy.save((err)=>{
 //   if(err) console.log(err);
 //   else console.log("Added");
-// })
-let cat= new categ();
-cat.name = 'anniversary';
-cat.save((err)=>{
-    if(err) console.log(err);
-    else console.log("Added Category :" + cat.name);
-});   
+// })  
 const app = express();
 
 // Passport Config
