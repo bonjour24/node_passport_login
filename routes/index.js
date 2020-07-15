@@ -9,21 +9,47 @@ const cart = require('../models/cart');
 router.get('/', forwardAuthenticated, (req, res) => res.render('home'));
 
 // Dashboard
-router.get('/home', ensureAuthenticated, (req, res) =>
+router.get('/home', (req, res) =>
   res.render('home', {
     user: req.user,
     title:'Home'
   })
 );
 
-router.get('/gifts',ensureAuthenticated,(req,res)=>{
-  res.render('gifts',{user:req.user, title:'Gifts'})
+//Gifts Categ
+router.get('/gifts',(req,res)=>{
+  Products.find({category:'5ef7479b3cf6df47c0ff81aa'},(err,prods)=>{
+    if(err) console.log(err);
+    else{
+      const few=prods.slice(0,4);
+      res.render('flowers',{user:req.user, title:'Gifts',few,prods});
+    }
+  })
 })
 
-router.get('/flowers',ensureAuthenticated,(req,res)=>{
-  res.render('flowers',{user:req.user, title:'Gifts'})
-})
+//Flowers Categ
+router.get('/flowers',(req,res)=>{
+  Products.find({category:'5f0459ee75bcb04384625b3e'},(err,prods)=>{
+    if(err) console.log(err);
+    else{
+      const few=prods.slice(0,4);
+      res.render('gifts',{user:req.user, title:'Flowers',few,prods});
+    }
+  })
+});
 
+//Anniversary categ
+router.get('/anniversary',(req,res)=>{
+  Products.find({category:'5f06f6d0fa1c2428a838725c'},(err,prods)=>{
+    if(err) console.log(err);
+    else{
+      const few=prods.slice(0,4);
+      res.render('anniversary',{user:req.user, title:'Anniversary',few,prods});
+    }
+  })
+});
+
+//Cart Page
 router.get('/cart', ensureAuthenticated,async function(req, res, next) {
   Cart
     .findOne({ owner: req.user._id })
@@ -37,19 +63,21 @@ router.get('/cart', ensureAuthenticated,async function(req, res, next) {
     });
 });
 
-router.get('/products',ensureAuthenticated, async (req,res)=>{
+//All Products Page
+router.get('/products', async (req,res)=>{
   const prods= await Products.find({});
-  const id= req.user._id;
-  res.render('prod',{prods, user:req.user});
+  res.render('prod',{prods, user:req.user,title:'All Products'});
 });
 
+//Profile
 router.get('/profile',ensureAuthenticated, (req,res)=>{
   const id=req.user._id;
   const {name,email,phone,history}=req.user;
   const last=history[0];
   res.render('profile',{name,email,phone,last,history,user:req.user})
-})
+});
 
+//Push to Cart
 router.post('/products/:product_id',ensureAuthenticated,(req,res)=>{
   Cart.findOne({ owner: req.user._id }, function(err, cart) {
     let index=-1;
@@ -68,6 +96,7 @@ router.post('/products/:product_id',ensureAuthenticated,(req,res)=>{
       item: req.body.product_id,
       price: parseFloat(req.body.priceValue),
       quantity: parseInt(1),
+      image:req.body.image,
       name:req.body.name
     });
 
@@ -80,6 +109,7 @@ router.post('/products/:product_id',ensureAuthenticated,(req,res)=>{
   });
 })
 
+//Single Product Page
 router.get('/viewprod/:product_id',ensureAuthenticated,(req,res)=>{
   const prod=req.params.product_id;
   Products.findOne({_id:prod},(err,prodFound)=>{
@@ -87,6 +117,7 @@ router.get('/viewprod/:product_id',ensureAuthenticated,(req,res)=>{
   })
 })
 
+//Delete From Cart
 router.get('/cart/delete/:product_id',ensureAuthenticated, function(req, res,next) {
   Cart.findOne({ owner: req.user._id }, function(err, foundCart) {
     foundCart.items.pull(String(req.params.product_id));
@@ -109,6 +140,7 @@ router.get('/cart/delete/:product_id',ensureAuthenticated, function(req, res,nex
   });
 });
 
+//Add Quantity
 router.get('/cart/plus/:product_id',ensureAuthenticated,(req,res)=>{
   Cart.findOne({owner:req.user._id},(err,userCart)=>{
     if(err) 
@@ -138,6 +170,7 @@ router.get('/cart/plus/:product_id',ensureAuthenticated,(req,res)=>{
   })
 })
 
+//Lower Quantity
 router.get('/cart/minus/:product_id',ensureAuthenticated,(req,res)=>{
   Cart.findOne({owner:req.user._id},(err,userCart)=>{
     if(err) 
@@ -167,6 +200,8 @@ router.get('/cart/minus/:product_id',ensureAuthenticated,(req,res)=>{
   })
 })
 
+
+//Checkout Page
 router.get('/cart/checkout',ensureAuthenticated,(req,res)=>{
   Cart.findOne({owner:req.user._id},(err,foundCart)=>{
     var today = new Date();
@@ -183,4 +218,5 @@ router.get('/cart/checkout',ensureAuthenticated,(req,res)=>{
   })
 })
 
+//Exports
 module.exports = router;

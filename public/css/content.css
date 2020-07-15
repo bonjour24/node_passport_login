@@ -229,7 +229,9 @@ a:hover{
 	overflow: hidden;
 
 }
-
+.hide{
+	display: none;
+}
 .title{
 	color: black;
 	line-height: 10;
@@ -237,7 +239,9 @@ a:hover{
 
 
 .card{
+	max-height: 400px;
 	overflow: hidden;
+	margin-top: 12px;
 }
 
 .card img {

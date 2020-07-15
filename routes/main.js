@@ -23,39 +23,39 @@ router.post('/payment',ensureAuthenticated, function(req, res, next) {
     .catch((err)=>{
       console.log(err);
     })
-    // .then(function(charge) {
-    //   async.waterfall([
-    //     function(callback) {
-    //       Cart.findOne({ owner: req.user._id }, function(err, cart) {
-    //         callback(err, cart);
-    //       });
-    //     },
-    //     function(cart, callback) {
-    //       User.findOne({ _id: req.user._id }, function(err, user) {
-    //         if (user) {
-    //           for (var i = 0; i < cart.items.length; i++) {
-    //             user.history.push({
-    //               item: cart.items[i].item,
-    //               paid: cart.items[i].price
-    //             });
-    //           }
+    .then(function(charge) {
+      async.waterfall([
+        function(callback) {
+          Cart.findOne({ owner: req.user._id }, function(err, cart) {
+            callback(err, cart);
+          });
+        },
+        function(cart, callback) {
+          User.findOne({ _id: req.user._id }, function(err, user) {
+            if (user) {
+              for (var i = 0; i < cart.items.length; i++) {
+                user.history.push({
+                  item: cart.items[i].item,
+                  paid: cart.items[i].price
+                });
+              }
   
-    //           user.save(function(err, user) {
-    //             if (err) return next(err);
-    //             callback(err, user);
-    //           });
-    //         }
-    //       });
-    //     },
-    //     function(user) {
-    //       Cart.update({ owner: req.user._id }, { $set: { items: [], total: 0 }}, function(err, updated) {
-    //         if (updated) {
-    //           res.redirect('/home');
-    //         }
-    //       });
-    //     }
-    //   ]);
-    // });
+              user.save(function(err, user) {
+                if (err) return next(err);
+                callback(err, user);
+              });
+            }
+          });
+        },
+        function(user) {
+          Cart.update({ owner: req.user._id }, { $set: { items: [], total: 0 }}, function(err, updated) {
+            if (updated) {
+              res.redirect('/home');
+            }
+          });
+        }
+      ]);
+    });
   });
 
 module.exports = router;

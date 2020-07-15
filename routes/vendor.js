@@ -9,6 +9,7 @@ const Vendor=require('../models/vendor');
 const { forwardAuthenticated } = require('../config/vendorAuth');
 const Products = require('../models/products');
 const Category = require('../models/category');
+const { route } = require('./main');
 
 //Regitser Page
 router.get('/register',(req,res)=>{
@@ -145,4 +146,13 @@ router.post('/add/:vendor_id',(req,res)=>{
     });
 })
 
+router.get('/remove',(req,res)=>{
+    const id=req.params.product_id;
+    res.send('Hey');
+});
+
+router.post('/remove',(req,res)=>{
+    console.log(req.body);
+    console.log(req.us);
+})
 module.exports=router;

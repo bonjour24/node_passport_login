@@ -70,13 +70,14 @@
                     {{/each}}
 				            </table>
 				    </div>
-            {{#each foundCart}}
-            {{#if this.total}}
+           
 				    <div id="bigOrder" class="col-lg-4">
 				      <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
 				      <div class="p-4">
 				        <p class="font-italic mb-4">Delivery  and additional costs are calculated based on values you have entered.</p>
 				        <ul class="list-unstyled mb-4">
+							{{#each foundCart}}
+            				{{#if this.total}}
 				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>£ {{this.total}}</strong></li>
 				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Delivery Charges</strong><strong>£ 2.00</strong></li>
 				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>£ 0.50</strong></li>
@@ -84,12 +85,21 @@
 				          <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total </strong>
 				            <h5 class="font-weight-bold">£ {{this.total}} </h5>
 				          </li>
+						  	{{/if}}
+            				{{/each}}
 				        </ul>
+						{{#each user}}
+						{{#if this.name}}
+						{{#if this.address}}
 						<a  href="/cart/checkout" class="btn btn-warning rounded-pill py-2 btn-block">Procceed to checkout</a>
+						{{else}}
+						<a  href="/address" class="btn btn-warning rounded-pill py-2 btn-block">Add Delivery Address</a>
+						{{/if}}
+						{{/if}}
+						{{/each}}
 				      </div>
 				    </div>
-            {{/if}}
-            {{/each}}
+            
 				</div> 
 			</div>
 		</section><br><br>

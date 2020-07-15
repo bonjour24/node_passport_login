@@ -24,7 +24,7 @@
 									</div>
 									<div class="info" style="padding: 10px;margin-left: 90px;">
 										<small style="font-size: 15px;">{{this.name}}</small>
-										<br><small> {{this.price}}</small>
+										<br><small>£ {{this.price}}</small>
 									</div>
 								</div> 
                                 {{/if}}
@@ -81,15 +81,15 @@
 							<table class="w-100" cellpadding="8">
 								<tr>
 									<td>Total Product Price</td>
-									<td>₹ {{total}}</td>
+									<td>£ {{total}}</td>
 								</tr>
 								<tr>
 									<td>Delivery</td>
-									<td>₹ 49</td>
+									<td>£ 49</td>
 								</tr>
 								<tr>
 									<th>Total</th>
-									<th style="color: red;">₹ 598</th>
+									<th style="color: red;">£ {{total}}</th>
 								</tr>
 							</table>
 							<hr>
@@ -110,7 +110,7 @@
 							<script>
 								document.getElementsByClassName('stripe-button-el')[0].style.display='None'
 							</script>
-							<button class=" btn btn-outline-dark btn-lg">Pay with Stripe</button>
+							<button class=" btn btn-outline-dark btn-lg">Pay Here</button>
 							</form>						
 						</div>
 					</div>
