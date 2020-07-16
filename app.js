@@ -93,6 +93,7 @@ app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 app.use('/vendor',require('./routes/vendor.js'));
 app.use('/prod',require('./routes/products.js'));
+app.use('/admin',require('./routes/admin.js'));
 app.use(mainRoute);
 
 const PORT = process.env.PORT || 10000;

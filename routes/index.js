@@ -4,9 +4,12 @@ const Products = require('../models/products');
 const Cart =  require('../models/cart');
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 const cart = require('../models/cart');
+const User = require('../models/User');
+const category = require('../models/category');
+const { search } = require('./main');
 
 // Welcome Page
-router.get('/', forwardAuthenticated, (req, res) => res.render('home'));
+router.get('/', forwardAuthenticated, (req, res) => res.render('home',{title:'Home'}));
 
 // Dashboard
 router.get('/home', (req, res) =>
@@ -44,10 +47,36 @@ router.get('/anniversary',(req,res)=>{
     if(err) console.log(err);
     else{
       const few=prods.slice(0,4);
-      res.render('anniversary',{user:req.user, title:'Anniversary',few,prods});
+      res.render('prod',{user:req.user, title:'Anniversary',few,prods});
     }
   })
 });
+
+router.get('/birthday',(req,res)=>{
+  Products.find({category:'5f105b25f19dcc4828a28f48'},(err,prods)=>{
+    if(err) console.log(err);
+    else{
+      res.render('prod',{title:'Birthday',user:req.user});
+    }
+  })
+})
+
+//Profile Edit
+router.get('/edit' , ensureAuthenticated, (req,res)=>{
+  res.render('edit',{user:req.user, title:req.user.name})
+});
+
+router.post('/edit',ensureAuthenticated,(req,res)=>{
+  const newAddresss=req.body.address;
+  User.findOne({_id:req.user._id},(err,user)=>{
+    if(err) console.log(err);
+    else{
+      user.address=newAddresss;
+      user.save()
+      .then(res.redirect('/home'))
+    }
+  })  
+})
 
 //Cart Page
 router.get('/cart', ensureAuthenticated,async function(req, res, next) {
@@ -68,6 +97,36 @@ router.get('/products', async (req,res)=>{
   const prods= await Products.find({});
   res.render('prod',{prods, user:req.user,title:'All Products'});
 });
+
+router.post('/search', function(req, res, next) {
+  category.findOne({name:req.body.search},(err,categ)=>{
+    if(err)  console.log(err);
+    else{
+      console.log(categ);
+      Products.find({ $or:[ {name:req.body.search}, {category:categ._id} ]},(err,prods)=>{
+        if(err) console.log(err);
+        else  res.render('prod',{prods,user:req.user});
+      })
+    }
+  })
+});
+
+// router.get('/search', function(req, res, next) {
+//   if (req.query.q) {
+//     Products.search({
+//       query_string: { query: req.query.q}
+//     }, function(err, results) {
+//       results:
+//       if (err) return next(err);
+//       var data = results.hits.hits.map(function(hit) {
+//         return hit;
+//       });
+//       res.render('prod', {
+//         prods:data,
+//       });
+//     });
+//   }
+// });
 
 //Profile
 router.get('/profile',ensureAuthenticated, (req,res)=>{

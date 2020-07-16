@@ -88,6 +88,7 @@ router.post('/register', (req, res) => {
   }
 });
 
+
 // Login Post
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {

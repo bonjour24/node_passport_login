@@ -1,0 +1,29 @@
+<body style="background-color: white;">
+    <div class="container">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Id</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each list}}
+      {{#each this}}
+      {{#if this.name}}
+    <tr>
+      <th scope="row">{{this.name}}</th>
+      <td>{{this._id}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+    </tr>
+    {{/if}}
+    {{/each}}
+    {{/each}}
+  </tbody>
+</table>
+</div>
+
+</body>

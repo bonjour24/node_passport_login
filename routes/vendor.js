@@ -105,13 +105,13 @@ router.post('/login', (req, res, next) => {
             Products.find({vendor:found._id},(err,prods)=>{
                 if(err) console.log('No vendor Prods')
                 else{
-                    console.log(prods);
                     const id=found._id;
                     res.render('vendor/list',{user:found,prods,id});
                 }
             })
         })
 });
+
 
 router.get('/logout', (req, res) => {
     req.logout();
@@ -147,12 +147,22 @@ router.post('/add/:vendor_id',(req,res)=>{
 })
 
 router.get('/remove',(req,res)=>{
-    const id=req.params.product_id;
-    res.send('Hey');
+    console.log(req.body);
+   res.send('Hey');
 });
 
 router.post('/remove',(req,res)=>{
-    console.log(req.body);
-    console.log(req.us);
+    Products.deleteOne({_id:req.body.product_id},(err,prod)=>{
+        if(err)  console.log(err)
+        Vendor.findOne({_id:req.body.vend},(err,vendor)=>{
+        })
+    })
+})
+router.get('/products/:vendor_id',(req,res)=>{
+    Products.find({},(err,prods)=>{
+        Vendor.findOne({_id:req.params.vendor_id},(err,found)=>{
+            res.render('vendor/list',{user:found,prods,id:found._id});
+        })
+    })
 })
 module.exports=router;

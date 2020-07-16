@@ -20,39 +20,35 @@
 			                    <input id="form" class="form-control" type="search" placeholder="Search">
 			                    <button id="searchBtn" class="btn btn-warning my-2 my-sm-2" type="submit"><i style="color: white;" class="fa fa-search"></i></button>
 			                </form>
+			                <button id="location" class="ml-sm-2 btn"><i class="fas fa-map-pin"></i>&nbsp;Add Location</button>
 							<div id="items" class="navbar-nav ml-auto mt-2 mt-lg-0">
 			                	{{#if user}}
-			                    <a href="/vendor/login">
+			                    <a href="/admin/logout">
 			                    	<div class="items">
 				                        <i class="fas fa-sign-in-alt mb-sm-2 fa-lg"></i>
 				                        <h6>Logout</h6>
 				                    </div>
 				                </a>
 								{{else}}
-								<a href="/users/login">
+								<a href="/admin/login">
 			                    	<div class="items">
 				                        <i class="fas fa-sign-in-alt mb-sm-2 fa-lg"></i>
 				                        <h6>Login</h6>
 				                    </div>
 				                </a>
 								{{/if}}
-			                    
-                                {{#if user}}
-                                {{#each user}}
-                                {{#if this.name}}
-				                <a href="/vendor/products/{{this._id}}">
-				                	<div class="items">
-				                        <i class="fas fa-shopping-cart mb-sm-2 fa-lg"></i>
-				                        <h6>Products</h6>
+			                    <a href="/admin/category"> 
+				                    <div class="items">
+				                        <i class="fas fa-clipboard-list mb-sm-2 fa-lg"></i>
+				                        {{#if user}}
+										<h6>Add Category</h6>
+										{{/if}}
 				                    </div>
 				                </a>
-                                {{/if}}
-                                {{/each}}
-                                {{/if}}
-			                    <a href="/vendor/profile">
+			                    <a href="/profile">
 			                    	<div class="items">
 				                        <i class="far fa-user mb-sm-2 fa-lg"></i>
-				                        <h6><a href="/vendor/profile">Hi 
+				                        <h6><a href="/profile">Hi 
 											{{#if user}}
 											{{#each user}}
 											{{this.name}}
@@ -71,5 +67,4 @@
 		    	</div>
 			</div>
 		</div>
-	    
 	</header>
